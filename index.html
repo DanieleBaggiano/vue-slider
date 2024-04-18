@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Custom style -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Vue.js -->
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+  <title>Vue-JS Array Carousel with Objects</title>
+</head>
+
+<body>
+  <div id="app" class="my-carousel-item">
+
+    <div class="title">
+      <h2>{{ slider.titles[activeIndex] }}</h2>
+      <p>{{ slider.messages[activeIndex] }}</p>
+    </div>
+
+    <div class="imgs">
+      <button @click="myBtnLeft" class="btn-left">Indietro</button>
+      
+      <img :src="slider.images[activeIndex]" class="img-fluid" alt="Marvel's Spiderman Miles Morale picture">
+  
+      <button @click="myBtnRight" class="btn-right">Avanti</button>
+    </div>
+
+  </div>
+
+  <script src="./js/main.js"></script>
+</body>
+
+</html>

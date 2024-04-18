@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.my-carousel-item {
+    text-align: center;
+}
+
+.title {
+    margin-top: 50px;
+}
+
+.imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-fluid {
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+    margin-top: 30px;
+}
+
+.btn-left, .btn-right {
+    margin: 10px;
+}
