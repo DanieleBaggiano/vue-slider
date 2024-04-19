@@ -28,16 +28,16 @@ createApp({
           `Go dimension-hopping with Ratchet and Clank as they take
             on an evil emperor from another reality.`,
 
-            "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
+          "Grab all of your friends and drop into Epic Games Fortnite, a massive 100 - player face - off that combines looting, crafting, shootouts and chaos.",
 
-            "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city",
+          "Lost, injured and alone, a stray cat must untangle an ancient mystery to escape a long-forgotten city",
 
-            "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay."
+          "Marvel's Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay."
         ]
       }
     }
   },
-  methods : {
+  methods: {
     myBtnRight() {
       if (this.activeIndex < this.slider.images.length - 1) {
         this.activeIndex++;
@@ -51,6 +51,20 @@ createApp({
       } else {
         this.activeIndex = this.slider.images.length - 1;
       }
+    },
+    startAutoSlide() {
+      this.autoSlideInterval = setInterval(() => {
+        this.myBtnRight();
+      }, 3000);
+    },
+    stopAutoSlide() {
+      clearInterval(this.autoSlideInterval);
     }
+  },
+  mounted() {
+    this.startAutoSlide();
+  },
+  beforeUnmount() {
+    this.stopAutoSlide();
   }
 }).mount(`#app`);
